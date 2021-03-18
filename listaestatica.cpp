@@ -76,7 +76,7 @@ int remove_lista_meio(int posi){
 
 
 int main(){
-    int op1, op2, op3, op4, op5;
+    int op1, op2, op3;
     int val;
 
     constroi_lista();
