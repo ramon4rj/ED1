@@ -22,7 +22,7 @@ class HashTable:
                 break
                 return newval
 
-    def busca_tratamento_colisao(self, key, valor):    #Esse método faz a busca e retorna a posição do elemento buscado
+    def busca_tratamento_colisao(self, key, valor):    #Busca e retorna a posição do elemento desejado
         pos = self.hashDivisao(key)
         for i in range(self.table_size + 1):
             newpos = self.tratamento_colisoes(pos, i)
@@ -38,26 +38,20 @@ class HashTable:
 
 #Esse método retorna o numero de telefone dado uma chave, usando dois for
     def busca_telefone(self, key):
-        
         #Com tratamento de colisão
-
         pos0 = self.hashDivisao(key)
         pos = self.hashDivisao(key)
         for i in range(self.table_size + 1):
             newpos0 = ((pos0 + (i+3)) & 0x7FFFFFFF) % self.table_size
             valor = newpos0
-            #print("fez tantas vezes")
             for i in range(self.table_size + 1):
                 newpos = ((pos + (i+3)) & 0x7FFFFFFF) % self.table_size
-                #print("fez uma vez")
                 if self.array[newpos] == None:
                     return 0
                 if newpos == valor:
                     newval = self.array[newpos]
                     print(newval)
-                    #print(newpos)
                     return newpos
-                    #break
 
     def get_hash(self, key):
         h = 0
@@ -75,7 +69,7 @@ class HashTable:
     def get(self, key):
         h = self.get_hash(key)
         print(h)
-        #print(sd)
+
         #return self.array[h]
 
     def imprime_tabela(self):

@@ -19,7 +19,7 @@ Node* insere_pilha(int num, Node *topo){
 
     Node *newnode = (Node*) malloc(sizeof(Node)); //aloca um espaço do tamanho de node
     if (newnode == nullptr){
-        cout << "nulo \n";
+        cout << "nulo " << '\n';
     }
     newnode->dados = num;
     newnode->prox = topo; //newnode->prox vai receber o topo

@@ -8,13 +8,12 @@ class No:
 class Arvore:
 		
 	def __init__(self):                         #dado iniciado como none
-	#	self.raiz = No(None, None, None)    #se existir, recebe valor
 		self.raiz = None
 
 #Essa função vai inserir elementos na árvore, checando seus nós esquerdos e direitos
 	def inserir(self, valor):
 		new_no = No(valor, None, None)
-		if self.raiz == None:         #se a arvore nao foi iniciada
+		if self.raiz == None:
 			self.raiz = new_no 
 		else:
 			atual = self.raiz
